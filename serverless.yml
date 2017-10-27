@@ -1,0 +1,43 @@
+# Welcome to Serverless!
+#
+# This file is the main config file for your service.
+# It's very minimal at this point and uses default values.
+# You can always add more config options for more control.
+# We've included some commented out config examples here.
+# Just uncomment any of them to get that config option.
+#
+# For full config options, check the docs:
+#    docs.serverless.com
+#
+# Happy Coding!
+
+service: a-serverless-example
+
+provider:
+  name: aws
+  runtime: python2.7
+
+package:
+ exclude:
+   - node_modules/**
+
+functions:
+  get_issue:
+    st2_function: github.get_issue
+    events:
+      - http:
+          method: GET
+          path: issues/{user}/{repo}/{issue_id}
+          integration: lambda
+          request:
+            template:
+              application/json: >
+                {
+                  "user": "$input.params('user')",
+                  "repo": "$input.params('repo')",
+                  "issue_id": "$input.params('issue_id')"
+                }
+
+plugins:
+  - serverless-plugin-stackstorm
+  - serverless-plugin-simulate

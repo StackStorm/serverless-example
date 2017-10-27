@@ -1,0 +1,25 @@
+{
+  "name": "serverless-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "serverless.yml",
+  "dependencies": {
+    "request": "2.83.0",
+    "serverless-plugin-simulate": "0.0.17",
+    "serverless-plugin-stackstorm": "1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stackstorm/serverless-example.git"
+  },
+  "author": "Kirill Enykeev <enykeev@mech.sh>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/stackstorm/serverless-example/issues"
+  },
+  "homepage": "https://github.com/stackstorm/serverless-example#readme"
+}
